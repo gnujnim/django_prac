@@ -15,7 +15,15 @@
 
 </head>
 <body>
-    <div class="border-bottom mt-3">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="border-bottom mb-3">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
